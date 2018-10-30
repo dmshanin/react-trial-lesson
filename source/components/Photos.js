@@ -1,22 +1,26 @@
 // Core
 import React from 'react';
 
-export default class Header extends React.Component {
+// Instruments
+import { photos } from '../theme/assets/images/photos';
+
+// Components
+import Photo from './Photo';
+
+export default class Photos extends React.Component {
     render () {
+        const photosJSX = photos.map((photo) => {
+            // console.log(' photo', photo);
+
+            return <Photo
+                    key = { photo.id }
+                    src = { photo.src }
+                    secured = { photo.secured }
+            />;
+        });
+
         return (
-            <div className = 'header'>
-                <div>
-                    <a />
-                </div>
-
-                <input placeholder = 'Search' type = 'text'/>
-
-                <nav>
-                    <a className = 'explore' />
-                    <a className = 'likes' />
-                    <a className = 'settings' />
-                </nav>
-            </div>
+            <div className = 'photos'>{ photosJSX }</div>
         );
     }
 }

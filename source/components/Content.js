@@ -1,21 +1,16 @@
 // Core
 import React from 'react';
 
-export default class Header extends React.Component {
+// Components
+import Profile from './Profile';
+import Photos from './Photos';
+
+export default class Content extends React.Component {
     render () {
         return (
-            <div className = 'header'>
-                <div>
-                    <a />
-                </div>
-
-                <input placeholder = 'Search' type = 'text'/>
-
-                <nav>
-                    <a className = 'explore' />
-                    <a className = 'likes' />
-                    <a className = 'settings' />
-                </nav>
+            <div className = 'content'>
+                <Profile />
+                <Photos />
             </div>
         );
     }

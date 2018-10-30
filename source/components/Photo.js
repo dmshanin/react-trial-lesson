@@ -1,17 +1,12 @@
 // Core
 import React from 'react';
 
-// Instruments
-import { photos } from '../theme/assets/images/photos';
+const Photo = (props) => {
+    return props.secured ? null : (
+        <div className = 'photo'>
+            <img src = { props.src } />
+        </div>
+    );
+};
 
-export default class Photos extends React.Component {
-    render () {
-        const photosJSX = photos.map((photo) => {
-            return photo.src;
-        });
-
-        return (
-            <div className = 'photos'>{ photosJSX }</div>
-        );
-    }
-}
+export default Photo;
